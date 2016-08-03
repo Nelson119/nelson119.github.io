@@ -12,18 +12,15 @@ header {
 			}
 		}
 	}
-	nav.menu{
-		height:50px;
-		ul{
-			float: right;
-			padding:23px 10px;
-			margin:0;
-			@media screen and (max-width: 768px) {
-				float: none;
-				width: 100vw;
-				padding:0;
-				margin-top: vwsm(118);
-			}
+	ul.nav{
+		float: right;
+		padding:23px 10px;
+		margin:0;
+		@media screen and (max-width: 768px) {
+			float: none;
+			width: 100vw;
+			padding:0;
+			margin-top: vwsm(118);
 		}
 		li{
 			list-style: none;
@@ -31,7 +28,7 @@ header {
 			line-height: 1.05;
 
 			a{
-				color: $font-white-color;
+				text-transform: uppercase;
 				padding: 1px 25px;
 			}
 			&+li{
