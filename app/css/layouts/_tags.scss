@@ -1,0 +1,86 @@
+.tags.nav{
+	padding:23px 10px;
+	margin-top: 20px;
+	margin:0;
+	@media screen and (max-width: 768px) {
+		float: none;
+		width: 100vw;
+		padding:0;
+		margin-top: vwsm(118);
+	}
+	li{
+		list-style: none;
+		line-height: 1.05;
+
+		a{
+			text-transform: uppercase;
+		}
+		&+li{
+			border-left:1px solid #fff;
+		}
+		@media screen and (max-width: 768px) {
+			display: block;
+			width: 100%;
+			height: vwsm(186);
+			font-size: vwsm(49.2);
+			text-align: center;
+			border:0;
+			a{
+				padding:0;
+				display: block;
+				line-height: vwsm(186);
+			}
+			&+li{
+				border-left: 0;
+			}	
+			&:after{
+				position:relative;
+				margin:0 auto;
+				width: vwsm(567);
+				height: vwsm(4);
+				content:'';
+				display: block;
+			}
+			&:nth-child(1){
+				&:after{
+					background: url(../img/mobile/common/nav-border-1.png) no-repeat 0 0/ cover;
+				}
+			}	
+			&:nth-child(2){
+				&:after{
+					background: url(../img/mobile/common/nav-border-2.png) no-repeat 0 0/ cover;
+				}
+			}	
+			&:nth-child(3){
+				&:after{
+					background: url(../img/mobile/common/nav-border-3.png) no-repeat 0 0/ cover;
+				}
+			}	
+			&:nth-child(4){
+				&:after{
+					background: url(../img/mobile/common/nav-border-4.png) no-repeat 0 0/ cover;
+				}
+			}		
+		}
+	}
+
+
+	transition: opacity 0.2s linear 0s, height 0s linear 0.2s;
+
+	@media screen and (max-width: 768px) {
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+		width: 100%;
+		// height: vwsm(1170);
+		background: url(../img/mobile/common/menu-bg.png) no-repeat 0 0/ cover;
+		position: fixed;
+		z-index: 5;
+
+		.burger{
+			position: absolute;
+			top:0;
+			right: 0;
+		}
+	}
+}

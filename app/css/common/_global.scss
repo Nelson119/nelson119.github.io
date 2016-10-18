@@ -112,7 +112,7 @@ html{
 	.container{
 		min-width: 320px;
 	}
-	&.ie,&.firefox.windows{
+	&.ie,&.firefox.windows7{
 		body{
 			font-family: $main-font-fallback;
 		}
@@ -180,4 +180,12 @@ html{
     margin-bottom: 30px;
   }
 
+}
+
+.goog-text-highlight{
+	background: none !important;
+	box-shadow: none !important;
+}
+.lg-sub-html a{
+	color: #fff;
 }
