@@ -12,10 +12,18 @@ header {
 		height: 100px;
 	}
 	.text-muted{
-		font-weight: lighter;
-		line-height: 100px;
-		height: 100px;
+		font-weight: 100;
+		line-height: 95px;
+		height: 95px;
 		margin: 0;
+	}
+	.lang{
+		position: absolute;
+		right: 15px;
+		bottom: 15px;
+	}
+	.container{		
+		position: relative;
 	}
 }
 

@@ -9,7 +9,8 @@ var tumblrTags = {};
 app.partial.tumblr = function(){
 	_(tumblr_api_read.posts).each(function(d, i){
 
-		var caption = $('<aside class=\'vertical-middle\'><h3 class=\'caption\'>'+d['photo-caption']+'</h3></aside>')
+		var caption = $('<aside class=\'vertical-middle notranslate\'><section class=\'caption\'>'+d['photo-caption']+'</section></aside>')
+		// var caption = $('<aside class=\'vertical-middle\'></aside>')
 			.sm(12).md(12).lg(12).xs(12).fontsize(13)
 			.css('background-image', 'url(' + d['photo-url-500'] + ')')
 			.css('background-size', 'cover')
@@ -59,9 +60,9 @@ app.partial.tumblr = function(){
 				dynamic: true,
 				dynamicEl: photos
 			}).on('onAfterAppendSubHtml.lg',function(){
+				$('.lg-sub-html').addClass('notranslate');
 				$('.lg-sub-html a').each(function(){
 					$(this).html($(this).text())
-						.addClass('notranslate')
 						.attr('target','_blank');
 				});
 			});
