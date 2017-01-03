@@ -1,2 +1,56 @@
 header {
+
+	position: fixed;
+	height: 80px;
+	width: 100%;
+	top: 0;
+
+
+	nav{
+		left: 0;
+		top:30px;
+		position: absolute;
+		a{
+			&+a{
+				&:before{
+					content:'  .  ';
+				}
+			}
+			svg{
+				display: inline-block;
+				height: 1em;
+				width: 1.6em;
+				padding: 0 0.3em;
+			}
+		}
+	}
+
+	.i18n{
+		right: 0;
+		left: auto;
+		display: inline-block;
+		position: absolute;
+
+		a{
+			background: #111;
+			color: #fff;
+			padding: 0 0.3em;
+			border-radius: 3px;
+			border: 0.05em solid #111;
+
+			&.active{
+				background: #fff;
+				color: #111;
+				cursor: default;
+				pointer-events: none;
+			}
+
+			&+a{
+				&:before{
+					display: none;
+					content: none;
+				}
+			}
+		}
+	}
 }

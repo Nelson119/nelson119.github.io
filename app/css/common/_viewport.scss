@@ -7,6 +7,11 @@
 		>.background, >header, >.content{
 			min-width: $screen-md;
 		}
+		.center{
+			width: 1170px;
+			margin: 0 auto;
+			position: relative;
+		}
 	}
 }
 @media screen and (max-width: #{$screen-xs - 1}) {

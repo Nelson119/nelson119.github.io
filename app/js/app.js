@@ -20,6 +20,12 @@ $(function(){
 	$.each(app.partial, function(name, init){
 		init();
     });
+
+
+    app.imageReload.callback = function(){
+			// console.log('preload callback');
+    	$('html').addClass('loading-done');
+    };
     app.imageReload.init();
 
 });

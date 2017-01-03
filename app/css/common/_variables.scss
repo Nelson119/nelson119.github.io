@@ -188,3 +188,54 @@ $font-white-color: #fff;
 .subimg-h{
 	@include SubImgH();
 }
+.visible-en, .visible-zh, .visible-tai{
+	display: none;
+}
+html[lang="en"]{
+	.visible-en{
+		display: block;
+	}
+}
+html[lang="zh"]{
+	.visible-zh{
+		display: block;
+	}
+}
+html[lang="tai"]{
+	.visible-tai{
+		display: block;
+	}
+}
+
+
+
+@include keyframes( fadeOut )
+{
+	0% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 0;
+	}
+	100%{
+		opacity: 0;
+		height: 0;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+@include keyframes( fadeIn )
+{
+	0% {
+		@include SubItem();
+		opacity: 0;
+	}
+	99% {
+		opacity: 1;
+	}
+	100%{
+		opacity: 1;
+		@include SubItem();
+	}
+}

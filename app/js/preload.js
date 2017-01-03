@@ -40,15 +40,11 @@ app.partial.preload = function(){
 							$(ele).html($('svg', svg).clone());
 						}
 					});	
+					checkAll(src);
 				});
 			}else{
 				var img = new Image();
 				img.onload = function(){
-					imagePreload[src] = true;
-					var alldone = true;
-					$.each(imagePreload, function($s, $done){
-						alldone = $done && alldone;
-					});
 					var ret = $(elements).filter(function(){
 						return src == $(this).attr('data-src');
 					}).each(function(i, ele){
@@ -57,20 +53,30 @@ app.partial.preload = function(){
 						}else{
 							$(ele).css('background-image', 'url(' + $(ele).attr('data-src') + ')');
 						}
-					});				
+					});			
+					checkAll(src);	
 
-					if(alldone){
-						//全部圖片下載完成
-						imageLoaded();
-					}
 				};
 				img.src = src;
 			}
 		});
 
+		function checkAll(src){
+
+			imagePreload[src] = true;
+			var alldone = true;
+			$.each(imagePreload, function($s, $done){
+				alldone = $done && alldone;
+			});
+			if(alldone){
+				//全部圖片下載完成
+				imageLoaded();
+			}
+		}
+
 		function imageLoaded(){
-			if(typeof callback == 'function'){
-				callback();
+			if(typeof app.imageReload.callback == 'function'){
+				app.imageReload.callback();
 			}
 		}
 
@@ -93,7 +99,8 @@ app.partial.preload = function(){
 				// 	$('html, body').height(window.innerHeight);
 				// }
 			}).trigger('resize');
-		}
+		},
+		callback: function(){}
 	};
 
 };	
