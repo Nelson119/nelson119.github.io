@@ -1,6 +1,8 @@
 .container{
-
-	margin-top: 80px;
+	width: 1170px;
+	padding: 0;
+	margin-top: 130px;
+	min-height: calc(100vh - 130px - 3em);
 
 	img{
 		width: 200px;
@@ -23,4 +25,16 @@
 	// }
 
 
+}
+
+.about{
+	.profile-picture{
+		position: relative;
+		img{
+			width: 100%;
+		}
+	}
+	.fa{
+		padding-right: 0.5em;	
+	}
 }

@@ -62,3 +62,13 @@ var share = {
 		window.open('https://mail.google.com/mail/?view=cm&fs=1&to=&su=與你分享:'+title+'&body='+body+'&bcc=');
 	}
 };
+
+
+function getParam(name){
+	var r = new RegExp('^.*[?&]'+name+'[=]([^&]+).*$', 'i');
+	if(!r.test(location.search)){
+		return null;
+	}
+	var value = location.search.replace(r,'$1');
+	return decodeURIComponent(value);
+}

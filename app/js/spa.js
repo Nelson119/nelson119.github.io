@@ -15,7 +15,7 @@ app.partial.spa = function(){
 	rootPath = stage ? '/staging/' : rootPath;
 
 
-	var container = $('#content'),
+	var container = $('#container'),
 		title = document.title;
 
 
@@ -45,7 +45,7 @@ app.partial.spa = function(){
 				}
 			});
 			if(!isPopstate){
-				pushState({uri: uri, name: name, menu: menu, title: title}, 'update content' + content);
+				pushState({uri: uri, name: name, menu: menu, title: title}, 'update content' + uri);
 			}
 
 			container.html(htmlContent);
@@ -60,12 +60,13 @@ app.partial.spa = function(){
 	}
 
 	function pushState(info, ref){
-		console.log('history.pushState('+JSON.stringify(info)+', '+(title || document.title)+', '+content+')');
+		console.log('history.pushState('+JSON.stringify(info)+', '+(title || document.title)+', '+info.uri+')');
 		console.log('push ref:',ref,':',info);
 		info.title = info.title || title;
 		document.title = info.title;
 		history.pushState(info, info.title, info.uri);
 	}
+
 	$(window).on('popstate', function(event){
 		var info = event.originalEvent.state;
 		// console.log('pop',info);
@@ -80,13 +81,20 @@ app.partial.spa = function(){
 	});
 
 	$('a[data-href]').on('click', function(e){
+		$(this).addClass('active').siblings().removeClass('active');
 		var uri = $(this).attr('data-href');
 		var name = $(this).text();
 		var menu = null;
 		updateContent(uri, name, menu, function(){
-			;
+			console.log(name);
 		});
 	});
+
+
+	if(getParam('path')){
+		var uri = decodeURIComponent(getParam('path'));
+		$('a[data-href='+ uri +']').trigger('click');
+	}
 
 	container.on('page:update', function(e, name){
 		// console.log(e);

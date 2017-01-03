@@ -10,10 +10,21 @@ header {
 		left: 0;
 		top:30px;
 		position: absolute;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		border-bottom: 0.05em solid currentColor;
+		padding-right: 2em;
+
+
 		a{
+			position: relative;
 			&+a{
+				padding-left: 2em;
 				&:before{
-					content:'  .  ';
+					position: absolute;
+					content:'';
+					width: 2em;
+					left: -2em;
 				}
 			}
 			svg{
@@ -21,6 +32,11 @@ header {
 				height: 1em;
 				width: 1.6em;
 				padding: 0 0.3em;
+			}
+
+			&.active{
+				cursor: default;
+				pointer-events: none;
 			}
 		}
 	}
@@ -30,6 +46,8 @@ header {
 		left: auto;
 		display: inline-block;
 		position: absolute;
+		padding-right: 0;
+		padding-left: 2em;
 
 		a{
 			background: #111;
