@@ -32,7 +32,6 @@ app.partial.spa = function(){
 		if(!isPopstate && location.pathname !== uri){
 			$('html').removeClass('loading-done');
 		}
-
 		$.get(uri, function(response){
 			var title = title;
 			var htmlContent = '';
@@ -43,11 +42,14 @@ app.partial.spa = function(){
 				if($(element).attr('role') === 'main'){
 					htmlContent = element;
 				}
+				if($(element).attr('id') === 'container'){
+					htmlContent = $('[role=main]', element);
+				}
 			});
 			if(!isPopstate){
 				pushState({uri: uri, name: name, menu: menu, title: title}, 'update content' + uri);
 			}
-
+			// console.log(htmlContent);
 			container.html(htmlContent);
 
 
@@ -55,13 +57,13 @@ app.partial.spa = function(){
 			container.trigger('page:update:' + name, menu);
 			container.trigger('page:update', menu);
 
-			app.imageReload.init();
+			app.imageReload.refresh();
 		});
 	}
 
 	function pushState(info, ref){
-		console.log('history.pushState('+JSON.stringify(info)+', '+(title || document.title)+', '+info.uri+')');
-		console.log('push ref:',ref,':',info);
+		// console.log('history.pushState('+JSON.stringify(info)+', '+(title || document.title)+', '+info.uri+')');
+		// console.log('push ref:',ref,':',info);
 		info.title = info.title || title;
 		document.title = info.title;
 		history.pushState(info, info.title, info.uri);
@@ -74,7 +76,7 @@ app.partial.spa = function(){
 			location.href = rootPath;
 		}
 		document.title = info.title;
-		updateContent(info.content, info.category, info.catalog, function(){
+		updateContent(info.uri, info.name, null, function(){
 		}, true);
 		return true;
 
@@ -95,6 +97,7 @@ app.partial.spa = function(){
 		var uri = decodeURIComponent(getParam('path'));
 		$('a[data-href='+ uri +']').trigger('click');
 	}
+
 
 	container.on('page:update', function(e, name){
 		// console.log(e);

@@ -5,7 +5,7 @@ html.loading{
 		top:0;
 		left:0;
 		position: fixed;
-		background: #fff;
+		background: rgba(0,0,0,0.5);
 		line-height: 100vh;
 		text-align: center;
 		svg{
@@ -26,6 +26,7 @@ html.loading{
 
 	&.loading-done{
 		figure.loading{
+			overflow: hidden; 
 			@include animation(
 				fadeOut 0.35s 1 linear forwards 0s
 			);

@@ -51,7 +51,7 @@ const testLintOptions = {
 gulp.task('lint', lint('app/js/**/*.js'));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
-gulp.task('html', ['css', 'js', 'about'], () => {
+gulp.task('html', ['css', 'js', 'about', 'contact'], () => {
   gulp.src('app/CNAME').pipe(gulp.dest('dist'));
   return gulp.src('app/*.html')
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
@@ -68,6 +68,15 @@ gulp.task('about', () => {
     // .pipe($.if('*.css', $.cssnano()))
     // .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist/about'));
+});
+
+gulp.task('contact', () => {
+  return gulp.src('app/contact/*.html')
+    .pipe($.useref({searchPath: ['app/contact']}))
+    // .pipe($.if('*.js', $.uglify()))
+    // .pipe($.if('*.css', $.cssnano()))
+    // .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    .pipe(gulp.dest('dist/contact'));
 });
 
 gulp.task('img', () => {

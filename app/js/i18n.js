@@ -15,9 +15,7 @@ app.partial.i18n = function(){
 
 		$('html').removeClass('loading-done');
 		$('html').attr('lang', $(this).attr('data-lang'));
-		setTimeout(function(){
-			$('html').addClass('loading-done');
-		}, 750);
+		app.imageReload.init();
 	});
 
 	var lang = $('html').attr('lang');

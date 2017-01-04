@@ -4,14 +4,14 @@
 	margin-top: 130px;
 	min-height: calc(100vh - 130px - 3em);
 
-	img{
-		width: 200px;
-		stroke: #1F3C66;
-	}
-	figure{
-		width: 200px;
-		background: center/cover;
-	}
+	// img{
+	// 	width: 200px;
+	// 	stroke: #1F3C66;
+	// }
+	// figure{
+	// 	width: 200px;
+	// 	background: center/cover;
+	// }
 
 	// svg path{
 	// 	stroke-dasharray: 6000px;
@@ -32,9 +32,42 @@
 		position: relative;
 		img{
 			width: 100%;
+			filter: grayscale(80%);
 		}
 	}
-	.fa{
-		padding-right: 0.5em;	
+	svg{
+		width: 10px;
+		margin-right: 0.5em;	
+		path{
+			stroke: #fff;
+			fill: #fff;
+		}
+	}
+}
+
+.contact{
+	.profile-picture{
+		position: relative;
+		img{
+			width: 100%;
+			filter: grayscale(80%);
+		}
+	}
+	li>span{
+		display: inline-block; 
+		text-transform: uppercase;
+		margin-right: 1em;
+		position: relative;
+		&:after{
+			content: ':';
+			text-indent: -1em;
+			display: inline;
+			position: absolute;
+			right: -1.5em;
+			top: 0;
+		}
+	}
+	a{
+		color: #fff;
 	}
 }

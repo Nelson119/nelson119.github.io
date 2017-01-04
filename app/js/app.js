@@ -55,11 +55,8 @@ var share = {
 		href = encodeURIComponent(href || location.href + '?utm_source=g+&utm_medium=googleplus_m&utm_campaign=camp');
 		window.open('https://plus.google.com/share?url=' + href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
 	},
-	email: function(href, title){
-		href = encodeURIComponent(href || location.href + '?utm_source=email&utm_medium=email_m&utm_campaign=camp');
-		title = encodeURIComponent(title || document.title);
-		var body = encodeURIComponent(''+href+' #' +title+'');
-		window.open('https://mail.google.com/mail/?view=cm&fs=1&to=&su=與你分享:'+title+'&body='+body+'&bcc=');
+	email: function(email){
+		window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+email+'&bcc=');
 	}
 };
 
