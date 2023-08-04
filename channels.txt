@@ -9,7 +9,7 @@
       "name": "華視新聞"
     },
     {
-      "url": "https://www.youtube.com/watch?v=5n0y6b0Q25o",
+      "url": "https://www.youtube.com/live/5n0y6b0Q25o",
       "name": "鏡新聞"
     },
     {
