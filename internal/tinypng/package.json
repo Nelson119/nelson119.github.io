@@ -1,0 +1,27 @@
+{
+  "name": "@hwao/hwao-tinypng",
+  "version": "1.1.5",
+  "description": "Tinypng without \"Too many files uploaded at once\" limit",
+  "keywords": [
+    "tinypng",
+    "compress"
+  ],
+  "homepage": "https://github.com/Nelson119/super-tinypng#readme",
+  "bugs": {
+    "url": "https://github.com/Nelson119/super-tinypng/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nelson119/super-tinypng.git"
+  },
+  "license": "ISC",
+  "author": "Tan",
+  "main": "index.js",
+  "bin": {
+    "tiny": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {}
+}

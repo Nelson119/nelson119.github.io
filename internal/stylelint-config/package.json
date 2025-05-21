@@ -1,0 +1,54 @@
+{
+  "name": "@internal/stylelint-config",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://github.com/vbenjs/vue-vben-admin",
+  "bugs": {
+    "url": "https://github.com/vbenjs/vue-vben-admin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "directory": "internal/stylelint-config"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && rollup -c rollup.config.js",
+    "clean": "pnpm rimraf .turbo node_modules dist",
+    "lint": "pnpm eslint ."
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "postcss": "^8.5.3",
+    "postcss-html": "^1.8.0",
+    "postcss-less": "^6.0.0",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.36.0",
+    "stylelint": "^16.16.0",
+    "stylelint-config-property-sort-order-smacss": "^10.0.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-recommended-vue": "^1.6.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-config-tailwindcss": "^1.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-prettier": "^5.0.3"
+  }
+}

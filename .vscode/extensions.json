@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode",
+    "lokalise.i18n-ally",
+    "antfu.iconify",
+    "antfu.unocss",
+    "mikestead.dotenv",
+    "warmthsea.vscode-custom-code-color",
+    "formulahendry.auto-complete-tag",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "naumovs.color-highlight",
+    "steoates.autoimport",
+    "christian-kohler.path-intellisense"
+  ]
+}

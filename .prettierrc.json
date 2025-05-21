@@ -1,0 +1,36 @@
+{
+  "arrowParens": "always",
+  "printWidth": 150,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "proseWrap": "always",
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "htmlWhitespaceSensitivity": "ignore",
+  "ignorePath": ".prettierignore",
+  "jsxSingleQuote": true,
+  "requireConfig": false,
+  "trailingComma": "es5",
+  "vueIndentScriptAndStyle": true,
+  "plugins": ["prettier-plugin-packagejson"],
+  "overrides": [
+    {
+      "files": ".*rc",
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx", "*.vue", "*.json"],
+      "options": {
+        "insertPragma": false,
+        "requirePragma": false,
+        "endOfLine": "auto",
+        "trimTrailingWhitespace": true,
+        "noMultipleEmptyLines": true
+      }
+    }
+  ]
+}

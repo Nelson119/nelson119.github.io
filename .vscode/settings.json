@@ -1,0 +1,113 @@
+{
+  "typescript.tsdk": "./node_modules/typescript/lib/tsserver.js", // 指定 TypeScript SDK 的路徑，使用本地 node_modules 中的 TypeScript
+  "npm.packageManager": "pnpm", // 設定 npm 的套件管理器為 pnpm
+  "editor.tabSize": 2, // 設定編輯器中 Tab 鍵的縮排大小為 2 個空格
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // 設定預設格式化工具為 Prettier 的 VSCode 擴展
+  "files.eol": "\n", // 設定檔案的行尾符號為 Unix 風格的換行符 (\n)
+  "search.exclude": {
+    // 設定在搜尋時排除的檔案或資料夾
+    "**/node_modules": true, // 排除 node_modules 資料夾
+    "**/*.log": true, // 排除所有 .log 檔案
+    "**/dist": true, // 排除 dist 資料夾（通常為編譯輸出）
+    "**/.git": true, // 排除 .git 資料夾
+    "**/.idea": true, // 排除 IntelliJ IDEA 的設定資料夾
+    "**/tmp": true, // 排除 tmp 資料夾
+    "CHANGELOG.md": true, // 排除 CHANGELOG.md 檔案
+    "examples": true, // 排除 examples 資料夾
+    "res": true, // 排除 res 資料夾
+    "screenshots": true, // 排除 screenshots 資料夾
+    "**/.DS_Store": true, // 排除 macOS 系統生成的 .DS_Store 檔案
+    "**/.gitignore": true // 排除 .gitignore 檔案
+  },
+  "files.exclude": {
+    // 設定在檔案總管中隱藏的檔案或資料夾
+    "**/.cache": true, // 隱藏 .cache 資料夾
+    "**/.editorconfig": true, // 隱藏 .editorconfig 檔案
+    "**/.eslintcache": true, // 隱藏 ESLint 快取檔案
+    "**/tmp": true, // 隱藏 tmp 資料夾
+    "**/.git": true, // 隱藏 .git 資料夾
+    "**/.hg": true, // 隱藏 Mercurial 的 .hg 資料夾
+    "**/CVS": true, // 隱藏 CVS 版本控制資料夾
+    "**/.DS_Store": true // 隱藏 macOS 的 .DS_Store 檔案
+  },
+  "files.watcherExclude": {
+    // 設定檔案監控器排除的檔案或資料夾，以提升性能
+    "**/.git/objects/**": true, // 排除 Git 物件資料夾
+    "**/.git/subtree-cache/**": true, // 排除 Git 子樹快取
+    "**/node_modules/**": true, // 排除 node_modules 資料夾
+    "**/tmp/**": true, // 排除 tmp 資料夾
+    "**/dist/**": true, // 排除 dist 資料夾
+    ".output/**": true, // 排除 output 資料夾
+    ".data/**": true // 排除 data 資料夾
+  },
+  "css.validate": false, // 關閉 VSCode 內建的 CSS 驗證功能
+  "less.validate": false, // 關閉 VSCode 內建的 LESS 驗證功能
+  "scss.validate": false, // 關閉 VSCode 內建的 SCSS 驗證功能
+  "stylelint.enable": true, // 啟用 Stylelint 擴展進行樣式檢查
+  "stylelint.validate": ["vue", "css", "less", "postcss", "scss", "sass"], // 設定 Stylelint 檢查的文件類型
+  "path-intellisense.mappings": {
+    // 設定 Path Intellisense 的路徑對應
+    "@/": "${workspaceRoot}/src" // 將 @/ 對應到工作區根目錄下的 src 資料夾
+  },
+  "editor.codeActionsOnSave": {
+    // 設定存檔檔案時執行的程式碼操作
+    "source.fixAll.eslint": "explicit", // 明確啟用 ESLint 的自動修復功能
+    "source.fixAll.stylelint": "explicit" // 明確啟用 Stylelint 的自動修復功能
+  },
+  "editor.formatOnSave": true, // 啟用存檔檔案時自動格式化
+  "editor.insertSpaces": true, // 使用空格而非 Tab 鍵進行縮排
+  "editor.quickSuggestionsDelay": 0, // 設定快速建議的延遲時間為 0 毫秒
+  "editor.renderWhitespace": "all", // 顯示所有空白字符（空格、換行等）
+  "editor.smoothScrolling": true, // 啟用編輯器的平滑滾動效果
+  "editor.snippetSuggestions": "top", // 將程式碼片段建議顯示在建議清單頂部
+  "editor.suggestSelection": "first", // 預設選擇建議清單中的第一個選項
+  "editor.tabCompletion": "on", // 啟用 Tab 鍵自動補上功能
+  "editor.quickSuggestions": {
+    // 設定快速建議的行為
+    "strings": true // 對字串啟用快速建議
+  },
+  "emmet.triggerExpansionOnTab": true, // 啟用 Tab 鍵觸發 Emmet 展開
+  "explorer.confirmDragAndDrop": false, // 關閉檔案總管拖放時的確認提示
+  "explorer.openEditors.visible": 1, // 設定檔案總管中可見的開啟編輯器數量為 1
+  "files.insertFinalNewline": true, // 在檔案結尾自動插入換行符號
+  "files.trimTrailingWhitespace": true, // 自動移除行尾的多餘空白
+  "javascript.updateImportsOnFileMove.enabled": "always", // 在移動檔案時自動更新 JavaScript 的引入路徑
+  "prettier.configPath": ".prettierrc.json", // 指定 Prettier 的設定文件路徑
+  "prettier.useEditorConfig": true, // 讓 Prettier 遵循 .editorconfig 的設定
+  "eslint.validate": ["typescript", "vue"], // 設定 ESLint 檢查的文件類型
+  "prettier.requireConfig": true, // 要求 Prettier 必須有設定文件才執行
+  "workbench.colorTheme": "One Dark Pro", // 設定工作台的主題為 One Dark Pro
+  "terminal.integrated.fontFamily": "Menlo for Powerline", // 設定終端機的字型為 Menlo for Powerline
+  "terminal.integrated.defaultProfile.osx": "zsh", // 在 macOS 上設定預設終端機為 zsh
+  "git.enableSmartCommit": true, // 啟用 Git 的智能提交功能
+  "[vue]": {
+    // 針對 Vue 文件的特定設定
+    "editor.autoClosingBrackets": "never", // 關閉括號的自動補上
+    "editor.autoClosingTags": false, // 關閉標籤的自動補上
+    "editor.codeActionsOnSave": {
+      // 存檔 Vue 文件時的程式碼操作
+      "source.fixAll.eslint": "explicit", // 明確啟用 ESLint 自動修復
+      "source.fixAll.stylelint": "explicit" // 明確啟用 Stylelint 自動修復
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // 設定 Vue 文件的預設格式化工具為 Prettier
+  },
+  "[javascriptreact][typescript]": {
+    // 針對 JavaScript React 和 TypeScript 文件的設定
+    "editor.codeActionsOnSave": {
+      // 存檔時的程式碼操作
+      "source.fixAll.stylelint": "never" // 禁止 Stylelint 的自動修復
+    }
+  },
+  "explorer.fileNesting.enabled": true, // 啟用檔案總管中的檔案分組收合功能
+  "explorer.fileNesting.expand": false, // 預設不展開分組收合的檔案
+  "explorer.fileNesting.patterns": {
+    // 定義檔案分組收合的模式
+    "*.ts": "$(capture).test.ts, $(capture).test.tsx", // 將 .ts 檔案與其測試檔案分組收合
+    "*.tsx": "$(capture).test.ts, $(capture).test.tsx", // 將 .tsx 檔案與其測試檔案分組收合
+    "*.env": "$(capture).env.*", // 將 .env 檔案與其變體分組收合
+    "CHANGELOG.md": "CHANGELOG*", // 將 CHANGELOG.md 與其他 CHANGELOG 檔案分組收合
+    "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,README*,.npmrc,.browserslistrc", // 將 package.json 與相關設定文件分組收合
+    "nuxt.config.ts": "tsconfig.json,.eslintrc.ts,eslint.config.mts,.eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,.prettierrc.*,.stylelintrc.*" // 將 nuxt.config.ts 與相關設定文件分組收合
+  },
+  "html.autoClosingTags": false // 關閉 HTML 文件中標籤的自動補上
+}
