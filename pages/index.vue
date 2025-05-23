@@ -1,23 +1,16 @@
 <template>
-  <NuxtLayout>
-    <div flex items-center>
-      <ElCard w-full py-15px>
-        <ElForm flex flex-col gap-10px max-w-500px mx-auto>
-          <ElFormItem>
-            <ElInput v-model="inastau" />
-          </ElFormItem>
-
-          <ElFormItem>
-            <ElButton @click="tryRecovery">看結果</ElButton>
-          </ElFormItem>
-        </ElForm>
-      </ElCard>
+  <NuxtLayout bg-background>
+    <div w-full h-full absolute flex flex-col>
+      <Card flex-grow-1 p-3 flex items-center border-3 border-strip border-solid rounded-4>
+        <h3 text-primary text-center>設計不只是看起來漂亮，更重要的是讓人感覺自然、使用順暢。這段話是為了填滿空間，沒有特別含義，請您見諒。</h3>
+        <p>設計不只是看起來漂亮，更重要的是讓人感覺自然、使用順暢。這段話是為了填滿空間，沒有特別含義，請您見諒。</p>
+      </Card>
     </div>
   </NuxtLayout>
 </template>
 
 <script setup>
-  import { ElCard } from 'element-plus';
+  import Card from '~/components/ui/card/Card.vue';
 
   definePageMeta({
     layout: 'default',

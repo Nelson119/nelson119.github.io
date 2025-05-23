@@ -1,7 +1,5 @@
 // unocss-configs/shortcuts/components.ts
 
-import { elOverride } from './components/element-plus-override';
-
 export const componentShortcuts = {
   // 全局字型
   'font-noto': 'font-["Noto_Sans_TC"]',
@@ -12,9 +10,6 @@ export const componentShortcuts = {
     'bg-gray text-secondary rounded-[31px] px-6 py-4 w-[150px] h-[40px] md:w-[120px] md:h-[36px] border-1 border-secondary hover:brightness-90',
 
   icon: 'inline-block h-1.1em w-1.1em bg-contain bg-no-repeat bg-center',
-
-  // 巢狀引入 element-plus-override 的 shortcuts
-  ...elOverride,
 
   // RWD 相關快捷方式
   'hide-sm': 'hidden sm:block',

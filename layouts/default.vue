@@ -1,30 +1,19 @@
 <template>
-  <div flex flex-col min-h-100vh>
+  <div flex flex-col min-h-100vh :class="`theme-${theme}`">
     <!-- 頁面頂部導航欄 -->
-    <Header :theme="theme" />
+    <Header />
 
     <!-- 主要內容區域 -->
-    <main :theme="theme" class="container flex-grow-1 w-1200px mx-auto py-10px">
+    <main class="container flex-grow-1 w-1200px mx-auto min-h-full relative">
       <slot />
     </main>
 
     <!-- 頁面底部 -->
-    <Footer :theme="theme" />
+    <Footer />
   </div>
 </template>
 
 <script setup>
-  const theme = 'light';
+  const theme = ref('light');
+  provide('theme', theme);
 </script>
-
-<style scoped>
-  .dark {
-    background-color: #000;
-    color: #fff;
-  }
-
-  .light {
-    background-color: #dbdbdb;
-    color: #2f2f2f;
-  }
-</style>

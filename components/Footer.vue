@@ -1,5 +1,5 @@
 <template>
-  <div :class="theme" min-h-50px></div>
+  <div class="header bg-background" min-h-50px></div>
 </template>
 
 <script setup lang="ts">
@@ -11,15 +11,3 @@
     theme: 'dark',
   });
 </script>
-
-<style scoped>
-  .dark {
-    background-color: #000;
-    color: #fff;
-  }
-
-  .light {
-    background-color: #dbdbdb;
-    color: #2f2f2f;
-  }
-</style>

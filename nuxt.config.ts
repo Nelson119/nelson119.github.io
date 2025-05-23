@@ -1,7 +1,8 @@
 import { defineNuxtConfig } from 'nuxt/config';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import tailwindcss from '@tailwindcss/vite';
+
 import fs from 'fs';
 
 import { storeImports } from './stores';
@@ -10,20 +11,34 @@ export default defineNuxtConfig({
   // false: 禁用伺服器端渲染，生成純靜態網站
   ssr: process.env.IS_GITHUB_PAGES === 'true' ? false : true,
   app: {
+    baseURL: '/',
     // 動態設置 baseURL
-    baseURL:
-      process.env.IS_GITHUB_PAGES === 'true'
-        ? `/${process.env.REPO_NAME || 'sugar-club-frontend'}/` // GitHub Pages 需要倉庫名稱作為路徑
-        : '/', // 本地或其他環境使用根路徑
+    // baseURL:
+    //   process.env.IS_GITHUB_PAGES === 'true'
+    //     ? `/${process.env.REPO_NAME || 'repo'}/` // GitHub Pages 需要倉庫名稱作為路徑
+    //     : '/', // 本地或其他環境使用根路徑
   },
-  modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@nuxt/test-utils', '@unocss/nuxt'],
+  modules: [
+    '@nuxt/devtools',
+    '@pinia/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/test-utils',
+    '@unocss/nuxt',
+    'shadcn-nuxt',
+  ],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   alias: {
     '~': process.cwd(),
   },
+
+  css: ['~/assets/css/tailwind.css'],
   vite: {
     plugins: [
+      tailwindcss(),
       AutoImport({
         imports: [
           {
@@ -46,21 +61,12 @@ export default defineNuxtConfig({
             from: '~/utils', // 從 ~/utils 導入（~ 是專案根目錄）
             imports: ['resolveUrl'], // 自動導入 resolveUrl 函數
           },
-          {
-            from: 'element-plus', // 從 ~/utils 導入（~ 是專案根目錄）
-            imports: ['ElMessage'], // 自動導入 resolveUrl 函數
-          },
           ...storeImports,
         ],
         dts: 'types/auto-imports.d.ts', // 指定 auto-imports.d.ts 生成到 ./types 目錄
         vueTemplate: true,
       }),
       Components({
-        resolvers: [
-          ElementPlusResolver({
-            importStyle: false, // 禁止自動載入 Element Plus 樣式
-          }),
-        ],
         dts: 'types/components.d.ts', // 指定 components.d.ts 生成到 ./types 目錄
       }),
       {
@@ -82,12 +88,6 @@ export default defineNuxtConfig({
         // 監聽 UnoCSS 設定檔變更
         include: ['unocss-configs/**/*.ts'],
       } as any,
-    },
-    optimizeDeps: {
-      include: ['element-plus'], // 確保 Vite 預編譯 element-plus
-    },
-    resolve: {
-      dedupe: ['element-plus'], // 避免模組重複解析
     },
   },
   typescript: {
