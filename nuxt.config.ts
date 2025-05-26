@@ -1,7 +1,6 @@
 import { defineNuxtConfig } from 'nuxt/config';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import tailwindcss from '@tailwindcss/vite';
 
 import fs from 'fs';
 
@@ -18,27 +17,15 @@ export default defineNuxtConfig({
     //     ? `/${process.env.REPO_NAME || 'repo'}/` // GitHub Pages 需要倉庫名稱作為路徑
     //     : '/', // 本地或其他環境使用根路徑
   },
-  modules: [
-    '@nuxt/devtools',
-    '@pinia/nuxt',
-    '@nuxt/eslint',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@nuxt/test-utils',
-    '@unocss/nuxt',
-    'shadcn-nuxt',
-  ],
+  modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@nuxt/test-utils', '@unocss/nuxt', '@nuxt/ui'],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   alias: {
     '~': process.cwd(),
   },
 
-  css: ['~/assets/css/tailwind.css'],
   vite: {
     plugins: [
-      tailwindcss(),
       AutoImport({
         imports: [
           {
@@ -65,9 +52,6 @@ export default defineNuxtConfig({
         ],
         dts: 'types/auto-imports.d.ts', // 指定 auto-imports.d.ts 生成到 ./types 目錄
         vueTemplate: true,
-      }),
-      Components({
-        dts: 'types/components.d.ts', // 指定 components.d.ts 生成到 ./types 目錄
       }),
       {
         name: 'unocss-hmr',

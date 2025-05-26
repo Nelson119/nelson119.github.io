@@ -1,16 +1,13 @@
 <template>
   <div class="header bg-background" min-h-50px>
-    <RadioGroup :default-value="theme">
-      <RadioGroupItem value="light">light</RadioGroupItem>
-      <RadioGroupItem value="dark">dark</RadioGroupItem>
-    </RadioGroup>
+    <URadioGroup default-value="theme" :items="items" />
   </div>
 </template>
 
 <script setup lang="ts">
-  import RadioGroup from './ui/radio-group/RadioGroup.vue';
-  import RadioGroupItem from './ui/radio-group/RadioGroupItem.vue';
+  import type { RadioGroupItem } from '@nuxt/ui';
 
+  const items = ref<RadioGroupItem[]>(['System', 'Light', 'Dark']);
   interface Props {
     theme?: string;
   }
