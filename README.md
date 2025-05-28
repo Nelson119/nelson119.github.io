@@ -202,7 +202,7 @@ pnpm postinstall
 ---
 
 ```目錄結構
-SUGAR-CLUB-FRONTEND/
+NELSON119/
 ├── .data/                      # 運行時資料（例如資料庫）
 ├── .nuxt/                      # Nuxt 自動產生的運行時檔案
 ├── .output/                    # 建構後的輸出檔案（自動產生）

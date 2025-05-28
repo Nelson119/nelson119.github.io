@@ -1,6 +1,7 @@
 import { defineNuxtConfig } from 'nuxt/config';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
+import RekaResolver from 'reka-ui/resolver';
 
 import fs from 'fs';
 
@@ -17,7 +18,17 @@ export default defineNuxtConfig({
     //     ? `/${process.env.REPO_NAME || 'repo'}/` // GitHub Pages 需要倉庫名稱作為路徑
     //     : '/', // 本地或其他環境使用根路徑
   },
-  modules: ['@nuxt/devtools', '@pinia/nuxt', '@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@nuxt/test-utils', '@unocss/nuxt', '@nuxt/ui'],
+  modules: [
+    '@nuxt/devtools',
+    '@pinia/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/test-utils',
+    '@unocss/nuxt',
+    'reka-ui/nuxt',
+  ],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   alias: {
@@ -48,10 +59,29 @@ export default defineNuxtConfig({
             from: '~/utils', // 從 ~/utils 導入（~ 是專案根目錄）
             imports: ['resolveUrl'], // 自動導入 resolveUrl 函數
           },
+          {
+            from: '@radix-ui/themes',
+            imports: [
+              'Theme',
+              'RadioGroup',
+              'RadioGroupItem',
+              // 添加其他 Radix UI Themes 組件（例如 'Button', 'TextField'）
+            ],
+          },
           ...storeImports,
         ],
         dts: 'types/auto-imports.d.ts', // 指定 auto-imports.d.ts 生成到 ./types 目錄
         vueTemplate: true,
+      }),
+      Components({
+        dts: true,
+        resolvers: [
+          RekaResolver(),
+
+          // RekaResolver({
+          //   prefix: '' // use the prefix option to add Prefix to the imported components
+          // })
+        ],
       }),
       {
         name: 'unocss-hmr',

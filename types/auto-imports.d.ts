@@ -7,6 +7,9 @@
 export {}
 declare global {
   const EffectScope: (typeof import('vue'))['EffectScope']
+  const RadioGroup: typeof import('@radix-ui/themes')['RadioGroup']
+  const RadioGroupItem: typeof import('@radix-ui/themes')['RadioGroupItem']
+  const Theme: typeof import('@radix-ui/themes')['Theme']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
   const asyncComputed: (typeof import('@vueuse/core'))['asyncComputed']
   const autoResetRef: (typeof import('@vueuse/core'))['autoResetRef']
@@ -307,6 +310,9 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly RadioGroup: UnwrapRef<typeof import('@radix-ui/themes')['RadioGroup']>
+    readonly RadioGroupItem: UnwrapRef<typeof import('@radix-ui/themes')['RadioGroupItem']>
+    readonly Theme: UnwrapRef<typeof import('@radix-ui/themes')['Theme']>
     readonly acceptHMRUpdate: UnwrapRef<typeof import('pinia')['acceptHMRUpdate']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>

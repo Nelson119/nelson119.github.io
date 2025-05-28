@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 
 // 從當前文件位置回溯到專案根目錄
-const rootDir = path.resolve(__dirname, '..'); // 回溯到 sugar-club-frontend/
+const rootDir = path.resolve(__dirname, '..');
 // 構建 normalize.css 的正確路徑
 const normalizePath = path.resolve(rootDir, 'node_modules/normalize.css/normalize.css');
 // 同步讀取 normalize.css 內容

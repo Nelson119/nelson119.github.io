@@ -16,4 +16,9 @@
 <script setup>
   const theme = ref('light');
   provide('theme', theme);
+  useHead({
+    htmlAttrs: {
+      class: theme,
+    },
+  });
 </script>
