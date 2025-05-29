@@ -1,5 +1,5 @@
 // unocss-configs/shortcuts/components.ts
-
+import radioGroup from './components/radio-group';
 export const componentShortcuts = {
   // 全局字型
   'font-noto': 'font-["Noto_Sans_TC"]',
@@ -29,4 +29,5 @@ export const componentShortcuts = {
   'grid-cols-1-sm': 'grid-cols-1 sm:grid-cols-2',
   'grid-cols-1-md': 'grid-cols-1 md:grid-cols-3',
   'grid-cols-1-lg': 'grid-cols-1 lg:grid-cols-4',
+  ...radioGroup,
 };
