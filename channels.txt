@@ -1,45 +1,108 @@
 {
   "channelList": [
     {
-      "url": "https://www.ftvnews.com.tw/live/live-video/2/11",
-      "name": "民視新聞"
+      "url": "https://www.youtube.com/live/MV9mI0GChwo",
+      "name": "三立 LIVE 新聞"
     },
     {
-      "url": "https://www.youtube.com/watch?v=wM0g8EoUZ_E",
-      "name": "華視新聞"
+      "url": "https://www.youtube.com/live/pF507BLtbqU",
+      "name": "三立 iNEWS 新聞"
+    },
+    {
+      "url": "https://www.youtube.com/live/ylYJSBUgaMA",
+      "name": "民視新聞"
     },
     {
       "url": "https://www.youtube.com/live/5n0y6b0Q25o",
       "name": "鏡新聞"
     },
     {
-      "url": "https://www.youtube.com/watch?v=xL0ch83RAK8",
+      "url": "https://www.youtube.com/live/wM0g8EoUZ_E",
+      "name": "華視新聞"
+    },
+    {
+      "url": "https://www.youtube.com/live/6KlRR_DGhmI",
+      "name": "公視台語台"
+    },
+    {
+      "url": "https://www.youtube.com/live/quwqlazU-c8",
+      "name": "公視新聞網"
+    },
+    {
+      "url": "https://www.youtube.com/live/C6gYqSHLRw4",
+      "name": "公共電視13頻道"
+    },
+    {
+      "url": "https://www.youtube.com/live/Y_f8oxWZYE4",
+      "name": "戲說台灣 24"
+    },
+    {
+      "url": "https://www.youtube.com/live/UOtzp3STNeE",
+      "name": "四季線上 真命天子"
+    },
+    {
+      "url": "https://www.youtube.com/live/GjXBXz5dl6E",
+      "name": "四季線上 親戚莫計較"
+    },
+    {
+      "url": "https://www.youtube.com/live/v8MUGB4vst8",
+      "name": "豬哥會社"
+    },
+    {
+      "url": "https://www.youtube.com/live/E-SNFemPCrQ",
+      "name": "現代嘉慶君"
+    },
+    {
+      "url": "https://www.youtube.com/live/xL0ch83RAK8",
       "name": "台視新聞"
     },
     {
-      "url": "https://www.youtube.com/watch?v=4Uc00FPs27M",
-      "name": "公共電視"
+      "url": "https://www.youtube.com/live/hR8_rrE0VyY",
+      "name": "新唐人亞太電視台"
     },
     {
-      "url": "https://www.youtube.com/user/57ETFN/live",
+      "url": "https://www.youtube.com/live/w87VGpgd90U",
+      "name": "寰宇新聞台灣台"
+    },
+    {
+      "url": "https://www.youtube.com/live/6IquAgfvYmc",
+      "name": "寰宇新聞台"
+    },
+    {
+      "url": "https://www.youtube.com/live/1I2iq41Akmo",
       "name": "東森財經"
     },
     {
-      "url": "https://www.youtube.com/channel/UCp2f7tGJGN6R9Muxipem8Nw/live",
-      "name": "寰宇新聞"
+      "url": "https://www.youtube.com/live/eA6Aczd3FZM",
+      "name": "非凡新聞"
     },
     {
-      "url": "https://www.youtube.com/watch?v=CKjSm5ZeehE",
-      "name": "三立 iNEWS 新聞"
+      "url": "https://www.youtube.com/live/iEpJwprxDdk",
+      "name": "Bloomberg Business News"
     },
     {
-      "url": "https://aka03p.akamaized.net/litv/fet001.smil/playlist.m3u8",
-      "name": "非凡新聞",
-      "header": "Referer: https://fetfriday.svc.litv.tv/"
+      "url": "https://www.youtube.com/live/RF4EFIqvj0w",
+      "name": "NBC News"
     },
     {
-      "url": "https://www.youtube.com/watch?v=dp8PhLsUcFE",
-      "name": "Bloomberg Global Financial News"
+      "url": "https://www.youtube.com/live/smGBsDf2p9I",
+      "name": "ABC News"
+    },
+    {
+      "url": "https://www.youtube.com/live/-F6AyqKa1yk",
+      "name": "CBS News"
+    },
+    {
+      "url": "https://www.youtube.com/live/vOTiJkg1voo",
+      "name": "ABC News (Australia)"
+    },
+    {
+      "url": "https://www.youtube.com/live/f0lYkdA-Gtw",
+      "name": "NHK World"
+    },
+    {
+      "url": "https://www.youtube.com/live/t9kwjZBLI-A",
+      "name": "日テレNEWS"
     }
   ]
 }
